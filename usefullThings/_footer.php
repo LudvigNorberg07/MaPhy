@@ -1,0 +1,1 @@
+<footer>&copy; 2026 Ludvig Norberg</footer>

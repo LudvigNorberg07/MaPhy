@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/*
+  ThemeBuilder export: nordic-product
+  Google Fonts: Playfair Display för rubriker, Roboto för brödtext.
+  Färgharmoni: analogous, spridning 100%.
+  Färgvärden exporteras som oklch.
+  Lägg data-theme="dark" eller data-theme="light" på html/body för att låsa läge.
+  Utan data-theme följer temat användarens systeminställning.
+*/
+
+:root {
+  --color-scheme: light;
+  --bg: oklch(97.59% 0.0029 264.54);
+  --surface: oklch(100% 0 89.88);
+  --surface-muted: oklch(96.7% 0.0029 264.54);
+  --text: oklch(22.35% 0.0266 267.99);
+  --muted: oklch(49.99% 0.0512 265.14);
+  --border: oklch(90.31% 0.0088 264.52);
+  --primary: oklch(49.1% 0.2194 262.73);
+  --primary-hover: oklch(43.73% 0.1921 262.74);
+  --primary-contrast: oklch(100% 0 89.88);
+  --accent: oklch(55.23% 0.1507 46.54);
+  --accent-contrast: oklch(100% 0 89.88);
+  --secondary: oklch(53.57% 0.0979 223.62);
+  --tertiary: oklch(42.29% 0.2645 271.56);
+  --success: oklch(52.73% 0.1371 150.07);
+  --warning: oklch(55.38% 0.1207 66.44);
+  --danger: oklch(51.43% 0.1978 16.93);
+  --shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --font-body: "Roboto", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+[data-theme="dark"] {
+  --color-scheme: dark;
+  --bg: oklch(19.64% 0.0125 270.71);
+  --surface: oklch(24.69% 0.0228 262.41);
+  --surface-muted: oklch(28.55% 0.0272 266.62);
+  --text: oklch(95.19% 0.0029 264.54);
+  --muted: oklch(75.29% 0.0216 264.44);
+  --border: oklch(35.23% 0.0354 264.9);
+  --primary: oklch(61.98% 0.1819 263.43);
+  --primary-hover: oklch(68.63% 0.1459 263.83);
+  --primary-contrast: oklch(20.93% 0.0323 262.41);
+  --accent: oklch(70.07% 0.1816 48.35);
+  --accent-contrast: oklch(20.93% 0.0323 262.41);
+  --secondary: oklch(69.88% 0.1298 224.69);
+  --tertiary: oklch(62.93% 0.1902 286.53);
+  --success: oklch(80.03% 0.1821 151.71);
+  --warning: oklch(86.06% 0.1731 91.94);
+  --danger: oklch(71.92% 0.169 13.43);
+  --shadow: 0 18px 52px rgba(0, 0, 0, 0.36);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --font-body: "Roboto", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+[data-theme="light"] {
+  --color-scheme: light;
+  --bg: oklch(97.59% 0.0029 264.54);
+  --surface: oklch(100% 0 89.88);
+  --surface-muted: oklch(96.7% 0.0029 264.54);
+  --text: oklch(22.35% 0.0266 267.99);
+  --muted: oklch(49.99% 0.0512 265.14);
+  --border: oklch(90.31% 0.0088 264.52);
+  --primary: oklch(49.1% 0.2194 262.73);
+  --primary-hover: oklch(43.73% 0.1921 262.74);
+  --primary-contrast: oklch(100% 0 89.88);
+  --accent: oklch(55.23% 0.1507 46.54);
+  --accent-contrast: oklch(100% 0 89.88);
+  --secondary: oklch(53.57% 0.0979 223.62);
+  --tertiary: oklch(42.29% 0.2645 271.56);
+  --success: oklch(52.73% 0.1371 150.07);
+  --warning: oklch(55.38% 0.1207 66.44);
+  --danger: oklch(51.43% 0.1978 16.93);
+  --shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --font-body: "Roboto", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-scheme: dark;
+    --bg: oklch(19.64% 0.0125 270.71);
+    --surface: oklch(24.69% 0.0228 262.41);
+    --surface-muted: oklch(28.55% 0.0272 266.62);
+    --text: oklch(95.19% 0.0029 264.54);
+    --muted: oklch(75.29% 0.0216 264.44);
+    --border: oklch(35.23% 0.0354 264.9);
+    --primary: oklch(61.98% 0.1819 263.43);
+    --primary-hover: oklch(68.63% 0.1459 263.83);
+    --primary-contrast: oklch(20.93% 0.0323 262.41);
+    --accent: oklch(70.07% 0.1816 48.35);
+    --accent-contrast: oklch(20.93% 0.0323 262.41);
+    --secondary: oklch(69.88% 0.1298 224.69);
+    --tertiary: oklch(62.93% 0.1902 286.53);
+    --success: oklch(80.03% 0.1821 151.71);
+    --warning: oklch(86.06% 0.1731 91.94);
+    --danger: oklch(71.92% 0.169 13.43);
+    --shadow: 0 18px 52px rgba(0, 0, 0, 0.36);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 18px;
+    --font-body: "Roboto", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  }
+}
+
+html,
+body {
+  color-scheme: var(--color-scheme);
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+  font-family: var(--font-heading);
+}
+
+a {
+  color: var(--primary);
+}
+
+
+.theme-button,
+button.theme-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: 0 1rem;
+  color: var(--primary-contrast);
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  font: 700 1rem/1 var(--font-body);
+}
+
+.theme-button:hover {
+  background: var(--primary-hover);
+}
+
+.theme-button.secondary {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: none;
+}
+
+.theme-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.theme-field {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--muted);
+  font: 700 0.875rem/1.3 var(--font-body);
+}
+
+.theme-field input,
+.theme-field select,
+.theme-field textarea {
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.8rem;
+  color: var(--text);
+  background: var(--surface);
+  font: 400 1rem/1.4 var(--font-body);
+}
+
+.theme-field input:focus,
+.theme-field select:focus,
+.theme-field textarea:focus {
+  outline: 3px solid color-mix(in srgb, var(--primary), transparent 76%);
+  border-color: var(--primary);
+}
