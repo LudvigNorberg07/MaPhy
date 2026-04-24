@@ -1,0 +1,28 @@
+@import url('nordic-product.css');
+*,*:before,*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --size:100px;
+}
+body{
+    height:100dvh;
+    width:100%;
+    display:grid;
+    place-content:center;
+}
+div{
+    outline:1px solid var(--text);
+    height:calc(var(--size)*4);
+    border-radius:calc(var(--size)/5);
+    width:calc(var(--size)*3);
+    padding: calc(var(--size)/5);
+    display:flex;
+    flex-direction:column;
+    
+}
+h1{
+    margin-left: calc(var(--size)/1.4)
+}
