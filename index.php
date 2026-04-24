@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php   require_once("assets.php")?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,18 +12,19 @@
 <body>
     <?php require_once("usefullThings/_nav.php") ?>
     <?php require_once("usefullThings/_header.php") ?>
+    <?= $_SESSION['mess'] ?>
     <main>
         <section>
             <h1>Study</h1>
-            <p>hej</p>
+            <p>LINK TO STUDY THINGS</p>
+        </section>
+        <section>
+            <h1>WELCOME</h1>
+            <p>ABOUT MaPhy</p>
         </section>
         <section>
             <h1>Discuss</h1>
-            <p>hej</p>
-        </section>
-        <section>
-            <h1>History</h1>
-            <p>hej</p>
+            <p>LINK TO DISCUSSIONS </p>
         </section>
     </main>
     <?php require_once("usefullThings/_footer.php") ?>
