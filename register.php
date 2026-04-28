@@ -9,7 +9,7 @@ if(isset($_POST['Registerbtn'])){
     $mail = $_POST['email'];
     $sql= "INSERT INTO users(username, password, name, mail) VALUES ('$username','$password','$realname','$mail')";
     $result=mysqli_query($conn, $sql);
-    $_SESSION['mess']="Successfully registerd account!";
+    $_SESSION['mess']="Successfully registered account!";
     $_SESSION['user']=$row['username'];
     $_SESSION['level']=$row['userlevel'];
     $_SESSION['id']=$row['id'];
@@ -22,6 +22,7 @@ if(isset($_POST['Registerbtn'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="login.css">
+    <script src="theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-md5@0.8.3/src/md5.min.js"></script>
 </head>
 <body>
@@ -33,10 +34,9 @@ if(isset($_POST['Registerbtn'])){
             <input type="password" name="pass" id="pass" placeholder="password">
             <input type="email" name="email" id="email" placeholder="abc123@gmail.com">
             <button type="submit" name="Registerbtn"> Register </button>
-            <p>If you already have an account <a href="login.php">Log in here!</a></p>
+            <p>If you already have an account <a href="login.php">Log in here</a></p>
             <?= $_SESSION['mess']; ?>
         </form>
-
     </div>
 </body>
 </html>
