@@ -6,7 +6,7 @@ if(isset($_GET['logout'])){
     $_SESSION['user']="";
     $_SESSION['level']="";
     $_SESSION['id']="";
-    $_SESSION['mess']="Successfuly logged out!";
+    $_SESSION['mess']="";
     header("Location: index.php");
 }
 if(isset($_POST['Loginbtn'])){

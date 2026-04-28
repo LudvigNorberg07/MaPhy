@@ -12,7 +12,11 @@
 <body>
     <?php require_once("usefullThings/_nav.php") ?>
     <?php require_once("usefullThings/_header.php") ?>
-    <?= $_SESSION['mess'] ?>
+    <?php
+    if(isset($_SESSION['mess']) && $_SESSION['mess']!=""){
+        echo $_SESSION['mess'] ;
+    }
+    ?>
     <main>
         <section>
             <h1>Study</h1>

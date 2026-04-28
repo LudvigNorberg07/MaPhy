@@ -23,7 +23,8 @@ div{
     flex-direction:column;
 }
 h1{
-    margin-left: calc(var(--size)/1.4)
+    margin-left: calc(var(--size)/1.4);
+    margin-bottom: calc(var(--size)/4);
 }
 form{
     display:flex;
