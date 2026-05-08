@@ -2,18 +2,19 @@
 <?php
 require_once("assets.php");
 
+//Registerear en ny användare
 if(isset($_POST['Registerbtn'])){
-    $realname = $_POST['realname'];
-    $username = $_POST['user'];
-    $password = md5($_POST['pass']);
-    $mail = $_POST['email'];
+    $realname = fix($_POST['realname']);
+    $username = fix($_POST['user']);
+    $password = md5(fix($_POST['pass']));
+    $mail = fix($_POST['email']);
     $sql= "INSERT INTO users(username, password, name, mail) VALUES ('$username','$password','$realname','$mail')";
     $result=mysqli_query($conn, $sql);
     $_SESSION['mess']="Successfully registered account!";
     $_SESSION['user']=$row['username'];
     $_SESSION['level']=$row['userlevel'];
     $_SESSION['id']=$row['id'];
-    header("Location: index.php");
+    header("Location: login.php");
 }
 
 ?>
@@ -21,27 +22,32 @@ if(isset($_POST['Registerbtn'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
     <script src="theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-md5@0.8.3/src/md5.min.js"></script>
 </head>
 <body>
     <div>
+        <!--Info för att lägga till användare-->
         <h1>Register</h1>
         <form action="register.php" method="post">
-            <input type="test" name="realname" id="realname" placeholder="Real name">
-            <input type="text" name="user" id="user" placeholder="username">
-            <input type="password" name="pass" id="pass" placeholder="password">
-            <input type="email" name="email" id="email" placeholder="abc123@gmail.com">
+            <input type="test" name="realname" id="realname" placeholder="Real name" required>
+            <input type="text" name="user" id="user" placeholder="username" required>
+            <input type="password" name="pass" id="pass" placeholder="password" required>
+            <input type="email" name="email" id="email" placeholder="abc123@gmail.com" required>
             <button type="submit" name="Registerbtn"> Register </button>
             <p>If you already have an account <a href="login.php">Log in here</a></p>
-            <?= $_SESSION['mess']; ?>
+            <?php
+                if(isset($_SESSION['mess']) && $_SESSION['mess']!=""){
+                    echo $_SESSION['mess'] ;
+                }
+            ?>
         </form>
     </div>
 </body>
 </html>
 <script>
-    //validate if username is taken
+    //Kollar om användarnamnet är taget
     const username=document.getElementById('user');
     names=[
         <?php
@@ -61,6 +67,7 @@ if(isset($_POST['Registerbtn'])){
             username.reportValidity();
         }
     });  
+    //Kollar om mailen redan används
     const mail=document.getElementById('email');
     mails=[
         <?php

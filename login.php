@@ -10,8 +10,8 @@ if(isset($_GET['logout'])){
     header("Location: index.php");
 }
 if(isset($_POST['Loginbtn'])){
-    $user=$_POST['user'];
-    $pass=md5($_POST['pass']);
+    $user=fix($_POST['user']);
+    $pass=md5(fix($_POST['pass']));
     $sql="SELECT * FROM users WHERE ((username='$user') AND (password='$pass'))";
     $result=mysqli_query($conn, $sql);
     if (mysqli_num_rows($result)===1){
@@ -32,7 +32,7 @@ if(isset($_POST['Loginbtn'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
     <script src="theme.js"></script>
 </head>
 <body>
@@ -43,7 +43,11 @@ if(isset($_POST['Loginbtn'])){
             <input type="password" name="pass" id="pass" placeholder="password">
             <button type="submit" name="Loginbtn"> Login </button>
             <p>If you dont have an account <a href="register.php">Create one here!</a></p>
-            <?= $_SESSION['mess']; ?>
+            <?php
+                if(isset($_SESSION['mess']) && $_SESSION['mess']!=""){
+                    echo $_SESSION['mess'] ;
+                }
+            ?>
         </form>
 
     </div>

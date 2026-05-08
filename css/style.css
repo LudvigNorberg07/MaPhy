@@ -34,21 +34,21 @@ header a{
     color:var(--text);
     font-size:calc(var(--size)/1.4);
 }
-main{
+.indexMain{
     flex-grow:5;
     display:flex;
     flex-direction:row;
     justify-content: space-evenly;
     margin-top:calc(var(--size)/3);
 }
-main section{
+.indexMain section{
     outline: 1px solid var(--border);
     border-radius: calc(var(--size)/10);
     width: calc(var(--size)*3.5);
     display:flex;
     flex-direction:column;
 }
-main section h1{
+.indexMain section h1{
     display:flex;
     margin-left:auto;
     margin-right:auto;

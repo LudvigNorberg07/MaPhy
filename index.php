@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="theme.js"></script>
 </head>
 <body>
@@ -14,10 +14,10 @@
     <?php require_once("usefullThings/_header.php") ?>
     <?php
     if(isset($_SESSION['mess']) && $_SESSION['mess']!=""){
-        echo $_SESSION['mess'] ;
+        echo $_SESSION['mess'] ?> Logged in as: <?php echo $_SESSION['user'];
     }
     ?>
-    <main>
+    <main class="indexMain">
         <section>
             <h1>Study</h1>
             <p>LINK TO STUDY THINGS</p>
