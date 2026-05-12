@@ -9,7 +9,7 @@ if(isset($_POST['sendmsg'])){
     $chatid=$_POST['chatid'];
     $sql="INSERT INTO messages (userid,message,chatid) VALUES ($userid,'$message',$chatid)";
     $result=mysqli_query($conn, $sql);
-    header("Location: discuss.php/#" .$_POST['chatid']);
+    header("Location: discuss.php/#" .$_POST['chatid']); //MÅSTE FIXA NÄSTA GÅNG
     exit();
 }
 
