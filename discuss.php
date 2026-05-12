@@ -9,7 +9,7 @@ if(isset($_POST['sendmsg'])){
     $chatid=$_POST['chatid'];
     $sql="INSERT INTO messages (userid,message,chatid) VALUES ($userid,'$message',$chatid)";
     $result=mysqli_query($conn, $sql);
-    header("Location: discuss.php/#" .$_POST['chatid']); //MÅSTE FIXA NÄSTA GÅNG
+    header("Location: discuss.php#msg".$chatid);
     exit();
 }
 
@@ -29,7 +29,10 @@ if(isset($_POST['sendmsg'])){
 
     <main class="discussMain">
 
-        <section id="search">SEARCH FIELD + Filter</section>
+        <section id="search">
+            SEARCH FIELD + Filter
+            <a href="CreateDisscussion.php">New Discussion</a>
+        </section>
 
         <!--Hämtar alla chattar-->
         <?php
@@ -39,7 +42,7 @@ if(isset($_POST['sendmsg'])){
 
             <!--Skriver ut alla chattar-->
             <details class="expand">
-                <summary class="title" id="<?=$row['id']?>"><p><?=$row['rating']?></p>&nbsp;&nbsp;<h1><?=$row['chatname']?></h1><div class="filler"></div><p><?=$row['Ma/Phy']?></p></summary>
+                <summary class="title"><p><?=$row['rating']?></p>&nbsp;&nbsp;<h1><?=$row['chatname']?></h1><div class="filler"></div><p><?=$row['Ma/Phy']?></p></summary>
                 <p class="title"><?=$row['description']?></p>
 
                 <!--Skriver ut meddelanden i chatten-->
@@ -54,12 +57,16 @@ if(isset($_POST['sendmsg'])){
                     ?>
                     <p class="message"><?=$username['username']?>: <?=$rowMessage['message'];?></p> <!--Skriver username + meddelande-->
                 <?php endwhile;?>
-
+                
+                <?php if(islevel(10)):?>
                 <form action="discuss.php" method="post">
-                    <input type="text" id="msg" name="msg" placeholder="Send message" required> <!--Meddelande-->
+                    <input type="text" id="msg<?=$row['id']?>" name="msg" placeholder="Send message" required> <!--Meddelande-->
                     <input type="hidden" id="chatid" name="chatid" value="<?=$row['id']?>"> <!--Vilken chatt skcikas det i?-->
                     <button type="submit" name="sendmsg">Send</button>
                 </form>
+                <?php else:?>
+                    <h2>You need to log in to post messages in discussions! </h2>
+                <?php endif;?>
             </details>
 
         <?php endwhile;?>
